@@ -1,19 +1,20 @@
 import { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ImSpinner6 } from "react-icons/im";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CgSpinner } from "react-icons/cg";
+
 const Home = lazy(() => import("./Home"));
 const Product = lazy(() => import("./Product"));
-const Cart = lazy(() => import("./Cart"));
 const MyAccount = lazy(() => import("./MyAccount"));
-import RootLayout from "../layouts/RootLayout";
+const Cart = lazy(() => import("./Cart"));
+const RootLayout = lazy(() => import("../layouts/RootLayout"));
 
 export default function AppRouter() {
   return (
     <Suspense
       fallback={
-        <div className="fixed w-full h-screen flex justify-center items-center flex-col gap-y-2.5 ">
-          <ImSpinner6 className="text-4xl animate-spin text-theme " />
-          <h1>App is Loading</h1>
+        <div className="fixed w-full h-screen flex flex-col gap-y-2.5 flex-center">
+          <CgSpinner className="text-4xl animate-spin text-theme" />
+          <h1 className="animate-pulse">App is Loading...</h1>
         </div>
       }
     >

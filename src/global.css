@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -17,10 +18,14 @@
   a {
     @apply flex flex-col h-10 rounded items-center justify-center px-2.5 cursor-pointer hover:opacity-80 hover:shadow-md active:opacity-50 font-light;
   }
+
   body {
     @apply bg-white dark:bg-darkBg dark:text-darkColor;
   }
 }
 
 @layer components {
+  .flex-center {
+    @apply justify-center items-center;
+  }
 }

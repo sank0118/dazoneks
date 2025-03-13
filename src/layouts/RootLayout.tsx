@@ -1,37 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { IoMenu, IoSearch, IoSunny, IoMoon } from "react-icons/io5";
 import RootNavbar from "./RootNavbar";
+import { IoMenu, IoSearchOutline, IoSunny, IoMoon } from "react-icons/io5";
 
 const RootLayout = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
-    document.body.className === "dark "
+    document.body.className === "dark"
   );
 
   const menuHandler = () => setIsMenuActive((prev) => !prev);
 
   return (
     <>
-      <header className="border-b border-b-border bg-white dark:bg-darkBg dark:border-b-darkBorder">
-        <div className=" flex gap-x-2.5 max-w-300 mx-auto p-2.5">
-          <img src="" alt="logo" className=" h-10 w-25 bg-gray-50" />
+      <header className="border-b border-b-border dark:bg-darkBg header dark:border-b-darkBorder">
+        <div className="flex gap-x-2.5 max-w-300 mx-auto p-2.5">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEIXZrAxoGc8atFu5H6vwl4k-i9W2vvrCbObqBtbXxlsV0Zw3YyAvXVJ-1-YAbF1I5zHo&usqp=CAU"
+            alt="logo"
+            className="h-10 w-25 bg-gray-50"
+          />
           <form
-            className=" flex flex-1"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
+            className="flex flex-1 gap-x-2.5"
+            onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="text"
-              className="flex-1 outline:none bg-bg px-2.5 dark:bg-darkBorder rounded "
-              placeholder="검색어를 입력해 주세요."
+              className="flex-1 outline-none bg-bg px-2.5 dark:bg-darkBorder rounded"
+              placeholder="검색어를 입력해주세요."
             />
             <button className="bg-theme text-bg text-2xl w-10 dark:text-darkBg">
-              <IoSearch />
+              <IoSearchOutline />
             </button>
           </form>
-
           <button
             className="w-10 bg-bg dark:bg-darkBorder"
             onClick={() => {
@@ -46,7 +47,7 @@ const RootLayout = () => {
             )}
           </button>
           <button
-            className="border text-2xl w-10  bg-bg dark:bg-darkBorder md:hidden"
+            className="text-2xl w-10 bg-bg dark:bg-darkBorder md:hidden"
             onClick={menuHandler}
           >
             <IoMenu />

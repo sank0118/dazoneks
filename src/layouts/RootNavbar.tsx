@@ -13,15 +13,15 @@ interface Menu {
 const RootNavbar = ({ menuHandler }: Props) => {
   const menus: Menu[] = [
     { to: "/", name: "Home" },
-    { to: "cart", name: "Cart" },
-    { to: "product", name: "Product" },
-    { to: "myAccount", name: "MyAccount" },
+    { to: "/cart", name: "Cart" },
+    { to: "/product", name: "Product" },
+    { to: "/myAccount", name: "MyAccount" },
   ];
 
   const location = useLocation();
 
   return (
-    <nav className="fixed top-15 right-0 bg-white w-full z-10 border border-border border-l-0 border-r-0 dark:bg-darkBg dark:border-darkBorder md:relative md:flex md:w-auto md:top-0">
+    <nav className="fixed bg-white top-15 right-0 w-full z-10 border border-border border-l-0 border-r-0 dark:bg-darkBg dark:border-darkBorder md:relative md:flex md:w-auto md:top-0">
       {menus.map(({ name, to }) => {
         const isCurrentPath = to === location.pathname;
         return (

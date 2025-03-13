@@ -1,1 +1,1 @@
-export * as Product from "./product.store";
+export * as PRODUCT from "./product.store";
